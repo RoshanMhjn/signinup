@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .text-div {
+        background: url("https://images.pexels.com/photos/22221/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .right-text {
+        backdrop-filter: blur(4px);
+        background-color: rgba(17, 17, 17, 0.2);
+        color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="h-screen flex items-center justify-center overflow-hidden">
+      <div
+        id="container"
+        class="relative bg-white rounded-3xl shadow-2xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-2"
+      >
+        <!-- signin form -->
+        <div id="signInForm" class="p-10">
+          <h2 class="text-4xl font-extrabold text-center text-[#0A9292] mb-8">
+            Sign In
+          </h2>
+          <form class="space-y-6">
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-[#0A9292]"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-1 focus:ring-[#0A9292]"
+              />
+            </div>
+            <div class="relative">
+              <label
+                for="password"
+                class="block text-sm font-medium text-[#0A9292]"
+                >Password</label
+              >
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                class="password mt-2 block w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-1 focus:ring-[#0A9292]"
+              />
+              <span
+                onclick="togglePassword('password')"
+                class="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500"
+              >
+                <i class="fas fa-eye mt-7"></i>
+              </span>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-3 px-6 bg-[#633BA5] text-white font-semibold rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-300"
+            >
+              Sign In
+            </button>
+          </form>
+          <p
+            class="w-full text-center py-2 text-xl font-semibold text-[#0A9292]"
+          >
+            or,
+          </p>
+          <button
+            class="w-full py-3 px-6 bg-[#633BA5] text-white font-semibold rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-300"
+          >
+            <span class="font-semibold">Signin with Google</span>
+            <span>
+              <i class="fab fa-google fa-lg"></i>
+            </span>
+          </button>
+
+          <p class="mt-8 text-center text-sm text-gray-600">
+            Don't have an account?
+            <a href="#" id="showSignUp" class="text-[#0A9292] font-medium"
+              >Sign up</a
+            >
+          </p>
+        </div>
+
+        <!-- right div -->
+        <div
+          class="hidden text-div md:flex flex-col items-center justify-center text-white rounded-r-3xl p-10"
+        >
+          <div class="right-text w-full">
+            <h2 class="text-4xl font-extrabold mb-4">Welcome Back!</h2>
+            <p class="text-lg font-semibold text-center">
+              Enter your personal details and start your journey with us.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- sign up form -->
+      <div
+        id="signUpForm"
+        class="hidden bg-white rounded-3xl shadow-2xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-2"
+      >
+        <!-- left div -->
+        <div
+          class="hidden text-div md:flex flex-col items-center justify-center text-white rounded-r-3xl p-10"
+        >
+          <div class="right-text w-full">
+            <h2 class="text-4xl font-extrabold mb-4">Join Us!</h2>
+            <p class="text-lg text-center">
+              Create an account to get started on your journey with us.
+            </p>
+          </div>
+        </div>
+
+        <!-- sign up form -->
+        <div id="signUpForm" class="p-10">
+          <h2 class="text-4xl font-extrabold text-center text-[#0A9292] mb-8">
+            Sign Up
+          </h2>
+          <form class="space-y-6">
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-[#0A9292]"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-1 focus:ring-[#0A9292]"
+              />
+            </div>
+            <div class="relative">
+              <label
+                for="password"
+                class="block text-sm font-medium text-[#0A9292]"
+                >Password</label
+              >
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                class="password mt-2 block w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-1 focus:ring-[#0A9292]"
+              />
+              <span
+                onclick="togglePassword('password')"
+                class="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500"
+              >
+                <i class="fas fa-eye mt-7"></i>
+              </span>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-3 px-6 bg-[#633BA5] text-white font-semibold rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-300"
+            >
+              Sign Up
+            </button>
+          </form>
+          <p
+            class="w-full text-center py-2 text-xl font-semibold text-[#0A9292]"
+          >
+            or,
+          </p>
+          <button
+            class="w-full py-3 px-6 bg-[#633BA5] text-white font-semibold rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-300"
+          >
+            <span class="font-semibold">Signup with Google</span>
+            <span>
+              <i class="fab fa-google fa-lg"></i>
+            </span>
+          </button>
+
+          <p class="mt-8 text-center text-sm text-gray-600">
+            Don't have an account?
+            <a href="#" id="showSignIn" class="text-[#0A9292] font-medium"
+              >Sign in</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const showSignUp = document.getElementById("showSignUp");
+      const showSignIn = document.getElementById("showSignIn");
+      const signInForm = document.getElementById("container");
+      const signUpForm = document.getElementById("signUpForm");
+
+      function displayForm() {
+        const activeForm = localStorage.getItem("activeForm");
+
+        if (activeForm === "signUp") {
+          signInForm.classList.add("hidden");
+          signUpForm.classList.remove("hidden");
+        } else {
+          signUpForm.classList.add("hidden");
+          signInForm.classList.remove("hidden");
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", displayForm);
+
+      if (showSignUp) {
+        showSignUp.addEventListener("click", () => {
+          signInForm.classList.add("hidden");
+          signUpForm.classList.remove("hidden");
+          localStorage.setItem("activeForm", "signUp");
+        });
+      }
+
+      if (showSignIn) {
+        showSignIn.addEventListener("click", () => {
+          signUpForm.classList.add("hidden");
+          signInForm.classList.remove("hidden");
+          localStorage.setItem("activeForm", "signIn");
+        });
+      }
+
+      function togglePassword(id) {
+        const input = document.getElementById(id);
+        const icon = input.nextElementSibling.querySelector("i");
+
+        if (input.type === "password") {
+          input.type = "text";
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
+        } else {
+          input.type = "password";
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
+        }
+      }
+    </script>
+  </body>
+</html>
