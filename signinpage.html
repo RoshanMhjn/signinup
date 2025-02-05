@@ -20,18 +20,15 @@
         background-size: cover;
       }
 
-      .right-text {
-        backdrop-filter: blur(4px);
-        background-color: rgba(17, 17, 17, 0.2);
-        color: #fff;
-        padding: 10px;
-        border-radius: 8px;
-        text-align: center;
+      .main {
+        background: url("https://images.pexels.com/photos/16516/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     </style>
   </head>
   <body>
-    <div class="h-screen flex items-center justify-center overflow-hidden">
+    <div class="main h-screen flex items-center justify-center overflow-hidden">
       <div
         id="container"
         class="relative bg-white rounded-3xl shadow-2xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-2"
@@ -106,16 +103,7 @@
         </div>
 
         <!-- right div -->
-        <div
-          class="hidden text-div md:flex flex-col items-center justify-center text-white rounded-r-3xl p-10"
-        >
-          <div class="right-text w-full">
-            <h2 class="text-4xl font-extrabold mb-4">Welcome Back!</h2>
-            <p class="text-lg font-semibold text-center">
-              Enter your personal details and start your journey with us.
-            </p>
-          </div>
-        </div>
+        <div class="text-div p-0"></div>
       </div>
 
       <!-- sign up form -->
@@ -126,14 +114,7 @@
         <!-- left div -->
         <div
           class="hidden text-div md:flex flex-col items-center justify-center text-white rounded-r-3xl p-10"
-        >
-          <div class="right-text w-full">
-            <h2 class="text-4xl font-extrabold mb-4">Join Us!</h2>
-            <p class="text-lg text-center">
-              Create an account to get started on your journey with us.
-            </p>
-          </div>
-        </div>
+        ></div>
 
         <!-- sign up form -->
         <div id="signUpForm" class="p-10">
